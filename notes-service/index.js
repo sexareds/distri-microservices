@@ -3,13 +3,12 @@ const express = require('express')
 var cors = require('cors')
 connectToMongo()
 const app = express()
-const port = 7070
  
 app.use(cors())
  
 app.use(express.json())
-app.use('/api/notes', require('./routes/notes'))
+app.use('/api/notes', require('./routes/notes.routes.js'))
 
-app.listen(port, () => {
-  console.log(`listening on port ${port}`)
+app.listen(process.env.PORT, () => {
+  console.log(`listening on port ${process.env.PORT}`)
 })

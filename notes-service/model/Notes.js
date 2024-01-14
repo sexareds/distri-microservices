@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const NotesSchema = new Schema({
-  user:{
+  user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref:'user'
+    ref: 'user'
   },
   title: {
     type: String,
@@ -16,7 +16,7 @@ const NotesSchema = new Schema({
   },
   tag: {
     type: String,
-    default:'General',
+    default: 'General',
   },
   date: {
     type: Date,
@@ -24,5 +24,5 @@ const NotesSchema = new Schema({
   },
 });
 
-const User = mongoose.model('notes',NotesSchema)
-module.exports= User
+const User = mongoose.model('notes', NotesSchema);
+module.exports = User;
