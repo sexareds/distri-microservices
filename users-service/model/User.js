@@ -22,5 +22,4 @@ const UserSchema = new Schema({
 
 const User = mongoose.model("User", UserSchema);
 //For Unique identification
-User.createIndexes();
 module.exports = User;

@@ -1,15 +1,15 @@
-const mongoose = require('mongoose')
-const dotenv = require('dotenv')
-dotenv.config()
+const mongoose = require('mongoose');
+require('dotenv').config();
 
 // Connection to MongoDB
 const connectToMongo = () => {
-    mongoose.connect('mongodb+srv://admin-user:password-user@cluster0.fwlinqy.mongodb.net/users?retryWrites=true&w=majority')
+  mongoose.connect(process.env.MONGO_URI)
     .then(() => {
-        console.log('Connected to MongoDB successfully \n');
+      console.log('Connected to MongoDB successfully \n');
     })
     .catch(error => {
-        console.error('Failed to connect to MongoDB:', error);
+      console.error('Failed to connect to MongoDB:', error);
     });
 }
-module.exports = connectToMongo
+
+module.exports = connectToMongo;
